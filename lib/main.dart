@@ -1,12 +1,14 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:laptop/HP.dart';
 import 'package:laptop/Home.dart';
-import 'package:laptop/Insert.dart';
-import 'package:laptop/inserted.dart';
+import 'package:laptop/Login_Screen.dart';
+import 'package:laptop/Search.dart';
+import 'package:laptop/search_view.dart';
 import 'package:laptop/test.dart';
 import 'firebase_options.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,298 +27,60 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: CarouselSliderExample(),
+      home: bottomNavigation(),
     );
   }
 }
 
+class bottomNavigation extends StatefulWidget {
+  const bottomNavigation({super.key});
 
-class CarouselSliderExample extends StatelessWidget {
+  @override
+  State<bottomNavigation> createState() => _bottomNavigationState();
+}
+
+class _bottomNavigationState extends State<bottomNavigation> {
+
+  int selectedIndex=0;
+  void pageShifter(index){
+    setState(() {
+      selectedIndex=index;
+    });
+  }
+
+  List<Widget> myScreens=[
+    HomePage(),
+    HomePage(),
+    HomePage(),
+    HomePage(),
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-          children: [
-            CarouselSlider(
-              items: [
+      body:myScreens[selectedIndex],
+
+      bottomNavigationBar: CurvedNavigationBar(
+          index: selectedIndex,
+          backgroundColor: Color(0xffffffff),
+          color: Color(0xf0002525),
+          onTap: pageShifter,
+          items: [
+            Icon(Icons.home_filled, color: selectedIndex!=0? Color(0xffffffff):
+            Color(0xf0a9a9a9),),
+            Icon(Icons.card_travel,color:  selectedIndex!=1? Color(0xffffffff):
+            Color(0xffff4914),),
+            Icon(CupertinoIcons.heart,color: selectedIndex!=2? Color(0xffffffff):
+            Color(0xffff4914),),
+            Icon(Icons.person_2_outlined,color:  selectedIndex!=3? Color(0xffffffff):
+            Color(0xffff4914),)
+          ])
 
 
-//First Slider
-
-                Container(
-                  width: 700,
-                  // margin: EdgeInsets.symmetric(horizontal: 20),
-                  // color: Colors.orange,
-                  height: 240,
-                  child:
-
-                      Row(
-                      children: [
-                        Stack(
-                          children:[
-
-                            Container(
-                              margin: EdgeInsets.only(left:120,bottom: 50),
-                              // padding: EdgeInsets.only(left: 10),
-                              width: 200,
-                              height: 300,
-                              // color: Colors.cyan,
-                              child: Image.asset("assets/images/DELL/1stlaptop.jpg"),
-                            ),
-
-
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              width: 170,
-                              height: 30,
-                              // color: Colors.cyan,
-                              // margin: EdgeInsets.symmetric(horizontal: 15),
-                              child: Text('laptop name', style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xf0a9a9a9),
-                              ),),
-                            ),
-                            Container(
-                              width: 170,
-                              height: 80,
-                              // color: Colors.lightBlue,
-                              // margin: EdgeInsets.symmetric(horizontal: 15),
-                              child: Text('laptop name Laptop Statement', style: GoogleFonts.poppins(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xf0171717),
-                              ),),
-                            ),
-
-                            GestureDetector(
-                              onTap: (){},
-                              child: Container(
-                                padding: EdgeInsets.only(left: 18,top: 7),
-                                width: 100,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: Color(0xf0003333),
-                                  borderRadius: BorderRadius.circular( 20)
-                                ),
-                                child: Text("Buy Now",style: GoogleFonts.poppins(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color(0xf0ffffff),
-                                ),),
-                              ),
-                            )
-
-                          ],),
-
-
-
-                      ],),
-                  ]),
-                ),
-
-
-//second slider
-
-                Container(
-                  width: 700,
-                  // margin: EdgeInsets.symmetric(horizontal: 20),
-                  // color: Colors.orange,
-                  height: 240,
-                  child:
-
-                  Row(
-                      children: [
-                        Stack(
-                          children:[
-
-                            Container(
-                              margin: EdgeInsets.only(left:120,bottom: 50),
-                              // padding: EdgeInsets.only(left: 10),
-                              width: 200,
-                              height: 350,
-                              // color: Colors.cyan,
-                              child: Image.asset("assets/images/lenovo/slim.png"),
-                            ),
-
-
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 170,
-                                  height: 30,
-                                  // color: Colors.cyan,
-                                  // margin: EdgeInsets.symmetric(horizontal: 15),
-                                  child: Text('laptop name', style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: Color(0xf0a9a9a9),
-                                  ),),
-                                ),
-                                Container(
-                                  width: 170,
-                                  height: 80,
-                                  // color: Colors.lightBlue,
-                                  // margin: EdgeInsets.symmetric(horizontal: 15),
-                                  child: Text('laptop name Laptop Statement', style: GoogleFonts.poppins(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xf0171717),
-                                  ),),
-                                ),
-
-                                GestureDetector(
-                                  onTap: (){},
-                                  child: Container(
-                                    padding: EdgeInsets.only(left: 18,top: 7),
-                                    width: 100,
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                        color: Color(0xf0003333),
-                                        borderRadius: BorderRadius.circular( 20)
-                                    ),
-                                    child: Text("Buy Now",style: GoogleFonts.poppins(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xf0ffffff),
-                                    ),),
-                                  ),
-                                )
-
-                              ],),
-
-
-
-                          ],),
-                      ]),
-                ),
-
-//Third Slider
-
-                Container(
-                  width: 700,
-                  // margin: EdgeInsets.symmetric(horizontal: 20),
-                  // color: Colors.orange,
-                  height: 240,
-                  child:
-
-                  Row(
-                      children: [
-                        Stack(
-                          children:[
-
-                            Container(
-                              margin: EdgeInsets.only(left:120,bottom: 50),
-                              // padding: EdgeInsets.only(left: 10),
-                              width: 200,
-                              height: 350,
-                              // color: Colors.cyan,
-                              child: Image.asset("assets/images/lenovo/ideapad.jpg"),
-                            ),
-
-
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 170,
-                                  height: 30,
-                                  // color: Colors.cyan,
-                                  // margin: EdgeInsets.symmetric(horizontal: 15),
-                                  child: Text('laptop name', style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: Color(0xf0a9a9a9),
-                                  ),),
-                                ),
-                                Container(
-                                  width: 170,
-                                  height: 80,
-                                  // color: Colors.lightBlue,
-                                  // margin: EdgeInsets.symmetric(horizontal: 15),
-                                  child: Text('laptop name Laptop Statement', style: GoogleFonts.poppins(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xf0171717),
-                                  ),
-                                    // softWrap: true,
-                                  ),
-                                ),
-
-                                GestureDetector(
-                                  onTap: (){},
-                                  child: Container(
-                                    padding: EdgeInsets.only(left: 18,top: 7),
-                                    width: 100,
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                        color: Color(0xf0003333),
-                                        borderRadius: BorderRadius.circular( 20)
-                                    ),
-                                    child: Text("Buy Now",style: GoogleFonts.poppins(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xf0ffffff),
-                                    ),),
-                                  ),
-                                )
-
-                              ],),
-
-
-
-                          ],),
-                      ]),
-                ),
-
-
-
-                // Container(
-                //   margin: EdgeInsets.all(8.0),
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(10.0),
-                //     image: DecorationImage(
-                //       image: NetworkImage("https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg"),
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
-                // Container(
-                //   margin: EdgeInsets.all(8.0),
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(10.0),
-                //     image: DecorationImage(
-                //       image: NetworkImage("https://img.freepik.com/free-photo/natures-beauty-reflected-tranquil-mountain-waters-generative-ai_188544-7867.jpg"),
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
-                // Container(
-                //   margin: EdgeInsets.all(8.0),
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(10.0),
-                //     image: DecorationImage(
-                //       image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJaGJkBMUC8PLCCOZ0prsrw8G24kIgtlgENosvHw3PJcltgjhtypEzkC0xzQuqGClM28I&usqp=CAU"),
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
-              ],
-              options: CarouselOptions(
-                height: 240,
-                enlargeCenterPage: true,
-                autoPlay: true,
-                aspectRatio: 16 / 9,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
-                viewportFraction: 0.8,
-              ),
-            ),
-          ]),
     );
   }
 }
+
+
+
