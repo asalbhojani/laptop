@@ -1,0 +1,120 @@
+       HP
+
+
+1st laptop
+Name: HP Envy Laptop 17t
+Price: $1,299.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 16 GB DDR4-3200 SDRAM (2 x 8 GB)
+Storage: 512 GB PCIe® NVMe™ M.2 SSD
+processor: Intel® Core™ i7-13700H
+Display: 17.3" diagonal, FHD (1920 x 1080), IPS, edge-to-edge glass, micro-edge, 300 nits
+Power supply: 90 W USB Type-C® power adapter
+battery: Supports battery fast charge: approximately 50% in 30 minutes[5]
+
+
+2nd laptop
+
+Name: HP ZBook Power
+Price: $4,799.0
+
+Specification:
+
+Operating system:Windows 11 Pro[1]
+Memory: 32 GB DDR5-5200 MHz RAM (2 x 16 GB)
+Storage: 512 GB PCIe® NVMe™ M.2 SSD
+processor: Intel® Core™ i7-13800H
+Display: 15.6" diagonal, FHD (1920 x 1080), IPS, anti-glare, 400 nits, 100% sRGB[21,23,24]
+Power supply: 150 W external AC power adapter[20]
+battery: HP Long Life 6-cell, 83 Wh Li-ion polymer
+
+
+
+3rd laptop
+
+Name:HP EliteBook 840 G8 Notebook 
+Price: $2,648.00
+
+Specification:
+Operating system:Windows 11 Pro
+Memory: 16 GB DDR4-3200 MHz RAM (1 x 16 GB)
+Storage: 512 GB PCIe® NVMe™ M.2 SSD
+processor:Intel® Core™ i7-1165G7 
+Display: 14" diagonal, FHD (1920 x 1080), IPS, anti-glare, 400 nits, 100% sRGB[16,17,18]
+Power supply: HP Smart 65 W External AC power adapter[34,35]
+Battery: HP Long Life 3-cell, 53 Wh Li-ion
+
+
+4th laptop
+
+Name: HP ZBook Firefly 
+Price: $3,275.00
+
+Specification:
+
+Operating system:Windows 11 Pro[1]
+Memory: 32 GB DDR5-5600 MHz RAM (2 x 16 GB)
+Storage: 512 GB PCIe® NVMe™ M.2 SSD
+Processor: AMD Ryzen™ 7 PRO 7840HS 
+Display: 14" diagonal, WUXGA (1920 x 1200), IPS, anti-glare, 400 nits, 100% sRGB[11,33,37]
+Power supply: 65 W USB Type-C™ adapter
+battery: HP Long Life 3-cell, 51 Wh Li-ion
+
+
+
+
+5th laptop
+
+Name: HP Laptop 17-cn3097nr
+Price: $919.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 16 GB DDR4-3200 MHz RAM (2 x 8 GB)
+Storage: 256 GB PCIe® NVMe™ M.2 SSD[21]
+processor: Intel® Core™ i7-1355U
+Display: 17.3" diagonal, FHD (1920 x 1080), IPS, anti-glare, 250 nits, 45% NTSC[17,35]
+Power supply: 45 W Smart AC power adapter
+Battery: 3-cell, 41 Wh Li-ion
+
+
+
+
+
+6th laptop
+
+Name: HP Spectre x360 2-in-1 Laptop
+Price: $1,699.99
+
+Specification:
+
+Operating system: Windows 11 Home
+Memory: 1 TB PCIe® NVMe™ M.2 SSD (4x4 SSD)
+Storage: 512 GB PCIe® NVMe™ TLC M.2 SSD(4x4 SSD)
+processor:Intel® Core™ i7-13700H
+Display: 16" diagonal, 3K+ (3072 x 1920), multitouch-enabled, IPS, Low Blue Light, 400 nit
+Power supply: 90 W Smart AC power adapter
+battery:6-cell, 83 Wh Li-ion polymer
+
+
+
+
+7th laptop
+
+Name: HP Spectre x360 2-in-1 Laptop
+Price: $1,399.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory:  32 GB DDR5-5600 MHz RAM (2 x 16 GB)
+Storage: 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD)
+processor:Intel® Core™ i5-1335U
+Display: 13.5" diagonal, WUXGA+ (1920 x 1280), multitouch-enabled, IPS, Low Blue Light, 400 nits
+Power :supply: 65 W USB Type-C™ power adapter
+battery:4-cell, 66 Wh Li-ion polymer
+

@@ -1,0 +1,103 @@
+1st laptop
+Name: lenovo ThinkPad 
+Price: 254,999 PKR
+
+Specification:
+
+Operating System: Window 10 Pro
+Memory: 8GB Ram LPDDR5 on board
+Storage: 512GB 
+processor: IntelA@ Coreac i9-12900H processor 2.5 GHZ
+Display: 16.0 inch 4k oled 16:10 aspect ratio
+Power: 6.0, 200w, AC Adapter, output: 20v DC, 10A
+battery: 96WHrs, 3S2P, 6 CELL 
+------------------------------------------------------------------------------
+
+2nd laptop
+Name:Lenovo ThinkBook
+Price: 300000 PKR
+
+Specification:
+
+Operating System:Window 10 Pro
+Memory: 4GB Ram LPDDR5 on board
+Storage: 625GB
+processor: IntelA@ Coreac i7-12900H processor 2.4 GHZ
+Display: 16.0 inch 4k oled 16:10 aspect ratio
+Power: 8.0, 350w, AC Adapter, output: 20v DC, 10A
+battery: 96WHrs, 3S2P, 8 CELL
+-------------------------------------------------------------------------------
+
+3rd laptop
+Name: Lenovo Legion
+Price: 234000 PKR
+
+Specification:
+
+Operating System:Window 10 Pro
+Memory: 8GB Ram LPDDR5 on board
+Storage: 645GB
+processor: IntelA@ Coreac i9-12900H processor 2.5 GHZ
+Display: 15.5 inch 4k oled 16:10 aspect ratio
+Power: 6.0, 200w, AC Adapter, output: 20v DC, 10A
+battery: 90WHrs, 3S2P, 6 CELL
+--------------------------------------------------------------------------------
+
+4th laptop
+Name:Lenovo Loq
+Price: 250000 PKR
+
+Specification:
+
+Operating System:Window 10 Education
+Memory: 8GB Ram LPDDR5 on board
+Storage: 525GB
+processor: IntelA@ Coreac i9-12900H processor 2.6 GHZ
+Display: 18.0 inch 4k oled 16:10 aspect ratio
+Power: 6.0, 200w, AC Adapter, output: 20v DC, 10A
+battery: 86WHrs, 3S2P, 4 CELL
+---------------------------------------------------------------------------------
+
+5th laptop
+Name: Lenovo Yoga
+Price: 450000 PKR
+
+Specification:
+
+Operating System:Window 10 Home
+Memory: 8GB Ram LPDDR5 on board
+Storage: 625GB
+processor: IntelA@ Coreac i8-12900H processor 2.6 GHZ
+Display:16.0 inch 4k oled 16:10 aspect ratio
+Power: 5.5, 200w, AC Adapter, output: 20v DC, 10A
+battery: 100WHrs, 3S2P, 6 CELL
+----------------------------------------------------------------------------------
+
+6th laptop
+Name: Lenovo IdeaPad
+Price: 500000 PKR
+
+Specification:
+
+Operating System: Window 10 Pro
+Memory:4GB Ram LPDDR5 on board
+Storage: 642GB
+processor: IntelA@ Coreac i5-12900H processor 2.5 GHZ
+Display: 14.5 inch 4k oled 16:08 aspect ratio
+Power: 7.0, 300w, AC Adapter, output: 20v DC, 10A
+battery: 96WHrs, 3S2P, 6 CELL
+-----------------------------------------------------------------------------------
+
+7th laptop
+Name: Lenovo Slim
+Price: 350000 PKR
+
+Specification:
+
+Operating System: Window 10 Pro
+Memory: 8GB Ram LPDDR5 on board
+Storage: 345GB
+processor: IntelA@ Coreac i6-12900H processor 2.5 GHZ
+Display: 150 inch 4k oled 16:09 aspect ratio
+Power:  5.0, 250w, AC Adapter, output: 15v DC, 10A
+battery: 96WHrs, 3S2P, 6 CELL

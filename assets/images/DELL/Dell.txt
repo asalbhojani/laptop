@@ -1,0 +1,123 @@
+Dell
+
+
+1st Laptop
+
+Name: XPS 13 Laptop
+Price: $1,099.00
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 16 GB: LPDDR5, 5200 MT/s (onboard), dual-channel
+Storage: 512 GB, PCIe NVMe x2 NVMe, SSD integrated
+processor: 12th Gen Intel® Core™ i7-1250U
+Display: 13.4", FHD+ 1920x1200, 60Hz, Non-Touch, Anti-Glare, 500 nit, InfinityEdge
+Power supply:45W AC Adapter Type-C
+battery: 3 Cell, 51 Wh, integrated
+
+
+
+2nd Laptop
+
+Name: XPS 15 Laptop
+Price: $2,799.00
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 32 GB: 2 x 16 GB, DDR5, 4800 MT/s
+Storage: 1 TB, M.2, PCIe NVMe, SSD
+processor: 13th Gen Intel® Core™ i9-13900H
+Display:15.6", 3.5K 3456x2160, 60Hz, OLED, Touch, Anti-Reflect, 400 nit, InfinityEdge
+Power supply:130Watt Type-C Adapter
+battery: 6 Cell, 86 Wh, integrated
+
+
+
+3rd Laptop
+
+Name: Inspiron 16 2-in-1 Laptop
+Price: $899.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 8 GB: LPDDR5, 4800 MT/s (onboard)
+Storage: 512 GB, M.2, PCIe NVMe, SSD
+processor: 13th Gen Intel® Core™ i5-1335U
+Display:16", FHD+ 1920x1200, 60Hz, WVA, Touch, 300 nit, ComfortView Plus
+Power supply:65W Type-C Adapter
+battery: 6 Cell, 86 Wh, integrated
+
+
+
+
+4th Laptop
+
+Name: Inspiron 14 2-in-1 Laptop
+Price: $649.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 8 GB: LPDDR5, 4800 MT/s (onboard)
+Storage: 256 GB, M.2, PCIe NVMe, SSD
+processor: 13th Generation Intel® Core™ i3-1315U
+Display:14", FHD+ 1920x1200, 60Hz, WVA, Touch, 250 nit, ComfortView
+Power supply:65W Type-C Adapter
+battery: 4 Cell, 54 Wh, integrated
+
+
+
+
+5th Laptop
+
+Name: Latitude 7640 Laptop
+Price:  $2,472.23
+
+Specification:
+
+Operating system:Windows 11 Pro, English
+Memory: 16 GB: LPDDR5, 4800 MT/s (onboard)
+Storage: 256 GB, M.2, PCIe NVMe, SSD, Class 35
+processor: 13th Gen Intel® Core™ i5-1335
+Display:Laptop 16.0" FHD+ (1920x1200) AG, No-Touch, IPS, 250 nits, FHD Cam, WLAN, Aluminum
+Power supply:65W AC adapter, USB Type-C, TCO Gen9 compliant
+battery: 3 Cell, 57 Wh, ExpressCharge™, ExpressCharge™ Boost capable
+
+
+
+
+6th Laptop
+
+Name: Latitude 7320 Detachable
+Price: $2,882.85
+
+Specification:
+
+Operating system:Windows 11 Pro, English,
+Memory: 8 GB: LPDDR4x, 4267 MT/s (onboard)
+Storage: 256 GB, M.2, PCIe NVMe, SSD, Class 35
+processor: 11th Gen Intel® Core™ i5-1140G7, vPro® (
+Display:13" 3:2 FHD+ 
+Power supply:65W Type-C EPEAT Adapter
+battery: 2 Cell, 40 Wh
+
+
+
+7th Laptop
+
+Name: Latitude 9330 2-in-1
+Price:  $3,046.05
+
+Specification:
+
+Operating system:Windows 11 Pro, English
+Memory: 16 GB, LPDDR5, 6400 MT/s, Non-ECC, integrated
+Storage: 512 GB, M.2, PCIe NVMe, SSD, Class 35
+processor: 12th Gen Intel® Core™ i7-1260U, vPro®
+Display:2-in-1, 13.3" QHD+ (2560x1600) Touch, IR Cam, Mic and SafeShutter, ComfortView+, Proximity Sensor
+Power supply:65W Type-C Adapter
+battery: 3 Cell, 50 Wh, ExpressCharge™ Capable
+

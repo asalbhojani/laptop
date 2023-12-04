@@ -1,0 +1,80 @@
+               Alien Ware
+
+1stlaptop
+Name:G15 Gaming Laptop
+Price: $899.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 8 GB: 1 x 8 GB, DDR5, 4800 MT/s
+Storage: 512 GB, M.2, PCIe NVMe, SSD
+processor:13th Gen Intel® Core™ i9-13900HX
+Display: 15.6", FHD 1920x1080, 120Hz, Non-Touch
+Power supply:240W AC Adapter
+battery:3 Cell, 56 Wh, integrated
+
+
+2nd laptop
+Name: m16 gaming laptop
+Price: $2,699.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 16 GB: 2 x 8 GB, DDR5, 4800 MT/s
+Storage:1 TB, M.2, PCIe NVMe, SSD
+processor:13th Gen Intel® Core™ i9-13900HX
+Display: 16" QHD+ (2560 x 1600) 240Hz, 3ms, ComfortView Plus, NVIDIA G-SYNC + DDS, 100% DCI-P3, FHD IR Camera
+Power : 330W Adapter
+battery:6 Cell, 86 Wh, integrated
+
+
+3rd laptop
+Name: X16 Gaming Laptop
+Price:$2,099.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 16 GB: 2 x 8 GB, DDR5, 4800 MT/s
+Storage:1 TB, M.2, PCIe NVMe, SSD
+processor:13th Gen Intel® Core™ i9-13900HX
+Display: 16" QHD+ (2560 x 1600) 240Hz, 3ms, ComfortView Plus, NVIDIA G-SYNC + DDS, 100% DCI-P3, FHD IR Camera
+Power : 330W Adapter
+battery:6 Cell, 86 Wh, integrated
+
+
+
+
+4th laptop
+Name:G16 Gaming Laptop
+Price: $1000.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 8 GB: 1 x 8 GB, DDR5, 4800 MT/s
+Storage: 512 GB, M.2, PCIe NVMe, SSD
+processor:13th Gen Intel® Core™ i9-13900HX
+Display: 15.6", FHD 1920x1080, 120Hz, Non-Touch
+Power supply:240W AC Adapter
+battery:3 Cell, 56 Wh, integrated
+
+
+5th laptop
+Name: m18gaming laptop
+Price:$1,599.99
+
+Specification:
+
+Operating system:Windows 11 Home
+Memory: 16 GB: 2 x 8 GB, DDR5, 4800 MT/s
+Storage:1 TB, M.2, PCIe NVMe, SSD
+processor:13th Gen Intel® Core™ i9-13900HX
+Display: 16" QHD+ (2560 x 1600) 240Hz, 3ms, ComfortView Plus, NVIDIA G-SYNC + DDS, 100% DCI-P3, FHD IR Camera
+Power : 330W Adapter
+battery:6 Cell, 86 Wh, integrated
+
+
+
