@@ -1,17 +1,12 @@
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart ';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:laptop/AlienWare.dart';
-import 'package:laptop/Asus.dart';
-import 'package:laptop/Dell.dart';
-import 'package:laptop/HP.dart';
-import 'package:laptop/Lenovo.dart';
-import 'package:laptop/Search.dart';
 import 'package:laptop/home/ProductsList.dart';
-import 'package:laptop/rating.dart';
-import 'package:laptop/test.dart';
+import 'package:laptop/home/Search.dart';
+
 
 
 class HomePage extends StatefulWidget {
@@ -197,6 +192,49 @@ class _HomePageState extends State<HomePage> {
             children: [
 
 
+
+
+              StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('Product-Data')
+                      .orderBy('Product-Brand')
+                      .startAt([searchName]).endAt([searchName ]).snapshots(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Text('Something went wrong');
+                    }
+
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Text("Loading");
+                    }
+                    return ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: snapshot.data!.docs.length,
+                        itemBuilder: (context, index) {
+                          var data = snapshot.data!.docs[index];
+                          return ListTile(
+                            onTap: () {
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //       builder: (context) => ProfileView(
+                              //             userId: data['id'],
+                              //           )),
+                              // );
+                            },
+                            leading: CircleAvatar(
+                              radius: 24,
+                              backgroundImage: NetworkImage(data['Product-Image']),
+                            ),
+                            title: Text(data['Product-Name']),
+                            subtitle: Text(data['Product-Price']),
+                          );
+                        });
+                  }),
+
+
+
+
               Container(
                 width: double.infinity,
                 margin: EdgeInsets.symmetric(horizontal: 20),
@@ -209,13 +247,6 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>RatingandReview()));
-                      },
-                      child: Text("Rating and Review"),
-                    ),
 
                     SizedBox(height: 30,),
                     CarouselSlider(
@@ -305,7 +336,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 230,
                                 height: double.infinity,
                                 // color: Colors.cyan,
-                                child: Image.asset("assets/images/carousel1.png"),
+                                child: Image.asset("assets/images/carousel7.jpg"),
                               ),
 
 
@@ -576,7 +607,7 @@ class _HomePageState extends State<HomePage> {
                                                 offset: Offset(1, 1),
                                               )
                                             ],
-                                          color: Color(0xf0e37e51),
+                                          color: Color(0xf0003333),
                                           //0xf0ceacc5,0xf0e1ccd8
                                           borderRadius: BorderRadius.circular(20),
                                         ),
@@ -586,7 +617,7 @@ class _HomePageState extends State<HomePage> {
                                         height: 300,
                                         margin: EdgeInsets.symmetric(vertical: 10),
                                         decoration: BoxDecoration(
-                                          color: Color(0xf0f55c27),
+                                          color: Color(0xf0004d4d),
                                           borderRadius: BorderRadius.circular(20),
                                         ),
                                       ),
@@ -595,7 +626,7 @@ class _HomePageState extends State<HomePage> {
                                         height: 300,
                                         margin: EdgeInsets.symmetric(vertical: 10),
                                         decoration: BoxDecoration(
-                                          color: Color(0xf0b64415),
+                                          color: Color(0xf0005e5e),
                                           borderRadius: BorderRadius.circular(20),
                                         ),
                                       ),
@@ -698,10 +729,7 @@ class _HomePageState extends State<HomePage> {
                       height: 50,
                       child: ElevatedButton(onPressed: (){
                         setState(() {
-
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> filterList(brandName: _selectedButtonName),));
-                          // updateData("Luxury Table", 48,"assets/img/table.png");
-
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ProductsList(brandName: _selectedButtonName),));
                           // updateData("Luxury Table", 48,"assets/img/table.png");
                         });
                       },

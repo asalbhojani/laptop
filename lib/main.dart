@@ -5,6 +5,8 @@ import 'package:laptop/HP.dart';
 import 'package:laptop/Home.dart';
 import 'package:laptop/Login_Screen.dart';
 import 'package:laptop/Search.dart';
+import 'package:laptop/home/ProductsList.dart';
+import 'package:laptop/rating.dart';
 import 'package:laptop/search_view.dart';
 import 'package:laptop/test.dart';
 import 'firebase_options.dart';
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: bottomNavigation(),
+      home: HomePage(),
     );
   }
 }
