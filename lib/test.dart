@@ -65,7 +65,7 @@ class _filterListState extends State<filterList> {
                     onPressed: () async{
                       showDialog<void>(
                         context: context,
-                        builder: (BuildContext dialogContext) {
+                        builder: (BuildContext dialogContext ) {
                           return AlertDialog(
                             title: Text("Filter Options"),
                             content: Column(

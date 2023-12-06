@@ -4,9 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:laptop/Firebase_Auth/Register_Screen.dart';
 import 'package:laptop/Firebase_Auth/update_pass.dart';
 import 'package:laptop/Profile_Firebase_Firestore/Profile_Screen.dart';
+import 'package:laptop/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../Home_Screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,10 +21,10 @@ class _LoginScreenState extends State<LoginScreen> {
   void userLogin()async{
     try{
       await FirebaseAuth.instance.signInWithEmailAndPassword(email: email.text.toString(), password: password.text.toString());
-      Navigator.push(context, MaterialPageRoute(builder: (context) => profileScreen(),));
-      // SharedPreferences userLoginDetails = await SharedPreferences.getInstance();
-      // userLoginDetails.setBool("userLoggedIn", true);
-      // userLoginDetails.setString('uEmail', email.text.toString());
+      Navigator.push(context, MaterialPageRoute(builder: (context) => bottomNavigation(),));
+      SharedPreferences userLoginDetails = await SharedPreferences.getInstance();
+      userLoginDetails.setBool("userLoggedIn", true);
+      userLoginDetails.setString('uEmail', email.text.toString());
       SharedPreferences userEmail = await SharedPreferences.getInstance();
       userEmail.setString("User-Email", email.text.toString());
     } on FirebaseAuthException catch (ex){
@@ -66,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Container(
                   decoration: const BoxDecoration(
-                      color: Color.fromRGBO(6, 27, 28,1),
+                      color: Color(0xf0003333),
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(20) , topRight: Radius.circular(20)) ),
                   width: double.infinity,
                   height: 600,
@@ -111,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       Container(
                                         padding: const EdgeInsets.all(8.0),
                                         decoration: const BoxDecoration(
-                                            border:  Border(bottom: BorderSide(color: Color.fromRGBO(6, 27, 28,1)))
+                                            border:  Border(bottom: BorderSide(color: Color(0xf0003333)))
                                         ),
                                         child: TextFormField(
                                           controller: email,
@@ -124,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             border: InputBorder.none,
                                             hintText: "Enter Email",
                                             hintStyle: TextStyle(color: Colors.grey[700]),
-                                            prefixIcon: const Icon(Icons.email,color: Color.fromRGBO(6, 27, 28,1),),
+                                            prefixIcon: const Icon(Icons.email,color: Color(0xf0003333)),
                                           ),
                                         ),
                                       ),
@@ -149,7 +148,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               });
                                             }, icon: passHide==true? Icon(Icons.remove_red_eye):Icon(Icons.key)),
                                             hintStyle: TextStyle(color: Colors.grey[700]),
-                                            prefixIcon: const Icon(Icons.password,color: Color.fromRGBO(6, 27, 28,1),),
+                                            prefixIcon: const Icon(Icons.password,color: Color(0xf0003333),),
                                           ),
                                         ),
                                       ),
@@ -208,7 +207,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         gradient: const LinearGradient(
                                             colors: [
                                               Colors.black,
-                                              Color.fromRGBO(6, 27, 28,1),
+                                              Color(0xf0003333),
                                               Colors.black
                                             ]
                                         )

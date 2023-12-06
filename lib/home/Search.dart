@@ -106,13 +106,7 @@ class _SearchState extends State<Search> {
                           var data = snapshot.data!.docs[index];
                           return ListTile(
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //       builder: (context) => ProfileView(
-                              //             userId: data['id'],
-                              //           )),
-                              // );
+
                             },
                             leading: CircleAvatar(
                               radius: 24,
@@ -131,103 +125,3 @@ class _SearchState extends State<Search> {
   }
 }
 
-//
-// appBar: AppBar(
-//
-// backgroundColor: Color(0xffffffff),
-// flexibleSpace: Padding(
-// padding: EdgeInsets.only(right: 8.0,left: 250,top: 5),
-// child: TextField(
-// onChanged: (value) {
-// setState(() {
-// searchName = value;
-// });
-// },
-// style: GoogleFonts.poppins(fontSize: 15,fontWeight: FontWeight.w600,color: Color(0xf0000000)),
-// decoration: InputDecoration(
-// // hintText: 'Search',
-// // hintStyle: TextStyle(color: Color(0xf0000000)),
-// contentPadding: EdgeInsets.only(left: 20,top: 20),
-// enabledBorder: OutlineInputBorder(
-// borderRadius: BorderRadius.circular(25.0),
-// borderSide: BorderSide(color: Colors.white),
-// ),
-// focusedBorder: OutlineInputBorder(
-// borderRadius: BorderRadius.circular(25.0),
-// borderSide: BorderSide(color: Color(0xf0003333)),
-// ),
-// suffixIcon: IconButton(
-// onPressed: () {
-// // perform search
-// },
-// icon: Icon(Icons.search, color: Color(0xf0000000),),
-// ),
-// ),
-// cursorColor: Color(0xf0000000),
-// ),
-// ),
-//
-// // dehaze
-//
-// // actions: [
-// // Container(
-// //   width: 200,
-// //   decoration: BoxDecoration(
-// //       // border: Border.all(width: 2, color: selectedIndex == index ?Color(0xf0008080):
-// //       // Color(0xffffffff),),
-// //   ),
-// //   child: TextFormField(
-// //     controller: userSearch,
-// //     decoration: InputDecoration(
-// //         hintText: "Search"
-// //     ),
-// //   ),
-// // ),
-// // IconButton(onPressed: (){
-// //   setState(() {
-// //     searchValue = userSearch.text.toString();
-// //     print(searchValue);
-// //   });
-// // }, icon: Icon(Icons.search,color: Color(0xf0000000),)),
-//
-// // SizedBox(height: 20,),
-//
-// // ],
-//
-// centerTitle: true,
-// elevation: 0,
-// leading: Builder(builder: (context){
-// return IconButton(onPressed: (){
-// Scaffold.of(context).openDrawer();
-// }, icon: Icon(Icons.dehaze,color: Color(0xf0000000),));
-// }),
-// // dehaze
-// ),
-
-// appBar: AppBar(
-//   backgroundColor: Color(0xffffffff),
-//   title: SizedBox(
-//     height: 40,
-//     child: TextField(
-//       onChanged: (value) {
-//         setState(() {
-//           searchName = value;
-//         });
-//       },
-//       decoration: InputDecoration(
-//           border: OutlineInputBorder(
-//               borderRadius: BorderRadius.circular(8),
-//               borderSide: BorderSide.none),
-//           contentPadding:
-//           EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-//           filled: true,
-//           fillColor: Color.fromARGB(255, 39, 39, 39),
-//           hintText: 'Search',
-//           hintStyle: TextStyle(color: Colors.grey),
-//           prefixIcon: Icon(
-//             Icons.search,
-//             color: Colors.grey,
-//           )),
-//     ),
-//   ),
-// ),

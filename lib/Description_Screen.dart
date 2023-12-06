@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uuid/uuid.dart';
 
 class DescriptionScreen extends StatefulWidget {
   const DescriptionScreen({super.key});
@@ -9,6 +12,10 @@ class DescriptionScreen extends StatefulWidget {
 }
 
 class _DescriptionScreenState extends State<DescriptionScreen> {
+
+  TextEditingController review = TextEditingController();
+  double rating = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +56,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                       ), ),
                     ),
                     SizedBox(width: 40,),
-                    
+
                     CircleAvatar(
                       backgroundColor: Color.fromRGBO(6, 27, 28, 1),
                       child: Row(
@@ -79,35 +86,140 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                     )
                   ],
                 ),
-              Row(
-                  children: [
-                    Container(
-                      height: 70,
-                      width: 30,
-                      margin: EdgeInsets.only(top: 200),
-                    ),
-                   const Icon(Icons.star, color: Colors.yellow, size: 30,),
-                    const Icon(Icons.star, color: Colors.yellow, size: 30,),
-                    const Icon(Icons.star, color: Colors.yellow, size: 30,),
-                    const Icon(Icons.star, color: Colors.yellow, size: 30,),
-                    const Icon(Icons.star, color: Colors.yellow, size: 30,),
 
-                    SizedBox(width: 140,),
+              GestureDetector(
+                onTap: ()async{
+                  showDialog<void>(
+                      context: context,
+                      builder: (BuildContext dialogContext){
+                        return AlertDialog(
+                          title: Text("Ratings and Reviews"),
+                          content: Container(
+                            height: 200,
+                            child: Column(
+                              children: [
 
-                    CircleAvatar(
-                      backgroundColor: Color.fromRGBO(6, 27, 28, 1),
-                      child: Row(
-                        children: [
-                          Icon(Icons.reviews, color: Colors.white, size: 40,),
-                          Container(
-                            decoration: BoxDecoration(
+                                Container(
+                                    margin: EdgeInsets.only(top: 10,bottom: 20,left: 10,right: 10),
+                                    child:TextFormField(
+                                        controller: review,
+                                        decoration: InputDecoration(
+                                          label: Text("Enter your Review"),
+                                          // filled: true,
+                                          // fillColor: Color(0xffff6d40),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius: BorderRadius.circular(15.0),
+                                            borderSide: BorderSide(color: Color(0xf0003333)),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius: BorderRadius.circular(15.0),
+                                            borderSide: BorderSide(color: Color(0xf0003333)),
+                                          ),
+                                          prefixIcon: Padding(
+                                            padding: EdgeInsets.only(left: 15.0,right: 10),
+                                            child: Icon(Icons.rate_review_outlined,color: Color(0xf0003333),),),
+                                          // prefixIcon: Icon(Icons.person,color: Color(0xf001074f),),
+                                        )
+                                    )
+                                ),
+
+                                Center(
+                                  child: RatingBar.builder(
+                                    initialRating: 0,
+                                    minRating: 1,
+                                    allowHalfRating: true,
+                                    unratedColor: Colors.grey,
+                                    itemCount: 5,
+                                    itemSize: 30.0,
+                                    itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                                    updateOnDrag: true,
+                                    itemBuilder: (context, index) => Icon(
+                                      Icons.star,
+                                      color: Colors.amber,
+                                    ),
+                                    onRatingUpdate: (ratingvalue) {
+                                      setState(() {
+                                        rating = ratingvalue;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ],
                             ),
-                          )
-                        ],
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                                onPressed: (){
+                                  setState(() {
+                                    rating=0;
+                                  });
+                                  Navigator.of(dialogContext).pop();
+                                },  child:Text("Not Now")
+                            ),
+                            ElevatedButton(
+                                child:Text("OK"),
+                                onPressed: ()async{
+
+                                  String productId = Uuid().v1();
+
+                                  Map<String , dynamic> productDetails ={
+                                    "Review-Id":productId,
+                                    "Review-message":review.text.toString(),
+                                    "Star-Rating":rating
+                                  };
+                                  await FirebaseFirestore.instance.collection("Product-Reviews").doc(productId).set(productDetails);
+                                  Navigator.of(dialogContext).pop();
+                                },
+                                style: ElevatedButton.styleFrom(backgroundColor: Color(
+                                    0xf0003333),
+                                )),
+                          ],
+                        );
+                      });
+                },
+
+                child: Row(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 30,
+                        margin: EdgeInsets.only(top: 200),
                       ),
-                    )
-                  ],
-                ),
+                      Center(
+                        child: RatingBar.builder(
+                          initialRating: rating,
+                          ignoreGestures: true,
+                          unratedColor: Colors.grey,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemSize: 25.0,
+                          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                          updateOnDrag: true,
+                          itemBuilder: (context, index) => Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          onRatingUpdate: (ratingvalue) {},
+                        ),
+                      ),
+
+                      SizedBox(width: 130,),
+
+                      CircleAvatar(
+                        backgroundColor: Color.fromRGBO(6, 27, 28, 1),
+                        child: Row(
+                          children: [
+                            Icon(Icons.reviews, color: Colors.white, size: 30,),
+                            Container(
+                              decoration: BoxDecoration(
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+              ),
                 Column(
                   children: [
                     Container(

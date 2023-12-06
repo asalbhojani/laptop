@@ -1,11 +1,17 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart ';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:laptop/Checkout/Checkout_Screen.dart';
+import 'package:laptop/FeedBack_Screen.dart';
+import 'package:laptop/Firebase_Auth/Login_Screen.dart';
+import 'package:laptop/Profile_Firebase_Firestore/Profile_Screen.dart';
 import 'package:laptop/home/ProductsList.dart';
 import 'package:laptop/home/Search.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 
@@ -17,6 +23,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+
   List<String> _buttons = ['assets/images/logo_hp.jpg', 'assets/images/logo_alien.png',
     'assets/images/logo_asus.png', 'assets/images/logo_lenovo.png', 'assets/images/logo_dell.jpg'];
   String _selectedButton = '';
@@ -27,9 +35,9 @@ class _HomePageState extends State<HomePage> {
   String _selectedButtonName = 'HP';
 
     List<Map<String, dynamic>> Data = [
-    {'name': 'Luxury ArmChair', 'price': '48', 'img': 'assets/img/chairOrange.png'},
-    {'name': 'Luxury Sofa',     'price': '60', 'img': 'assets/img/sofa.png'},
-    {'name': 'Luxury Table',    'price': '30', 'img': 'assets/img/table6.png'},
+    { 'price': '550000 Rs'},
+    { 'price': '600000 Rs'},
+    { 'price': '500000 Rs'},
   ];
 
   TextEditingController userSearch = TextEditingController();
@@ -43,51 +51,24 @@ class _HomePageState extends State<HomePage> {
 
       appBar: AppBar(
 
-        backgroundColor: Color(0xffffffff),
+        backgroundColor: const Color(0xffffffff),
         flexibleSpace: GestureDetector(
           onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> Search()));
           },
           child: Container(
-              margin: EdgeInsets.only(left: 300,top: 15,right: 30),
-              child: Icon(Icons.search,color: Color(0xf0000000),)),
+              margin: const EdgeInsets.only(left: 300,top: 15,right: 30),
+              child: const Icon(Icons.search,color: Color(0xf0000000),)),
         ),
-
-        // dehaze
-
-        // actions: [
-        // Container(
-        //   width: 200,
-        //   decoration: BoxDecoration(
-        //       // border: Border.all(width: 2, color: selectedIndex == index ?Color(0xf0008080):
-        //       // Color(0xffffffff),),
-        //   ),
-        //   child: TextFormField(
-        //     controller: userSearch,
-        //     decoration: InputDecoration(
-        //         hintText: "Search"
-        //     ),
-        //   ),
-        // ),
-        // IconButton(onPressed: (){
-        //   setState(() {
-        //     searchValue = userSearch.text.toString();
-        //     print(searchValue);
-        //   });
-        // }, icon: Icon(Icons.search,color: Color(0xf0000000),)),
-
-        // SizedBox(height: 20,),
-
-        // ],
 
         centerTitle: true,
         elevation: 0,
         leading: Builder(builder: (context){
           return IconButton(onPressed: (){
             Scaffold.of(context).openDrawer();
-          }, icon: Icon(Icons.dehaze,color: Color(0xf0000000),));
+          }, icon: const Icon(Icons.dehaze,color: Color(0xf0000000),));
         }),
-          // dehaze
+
       ),
 
       drawer: Drawer(
@@ -101,13 +82,14 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   width: double.infinity,
                   height: 100,
-                  color: Color(0xf0003333),
+                  color: const Color(0xf0003333),
                 ),
+
                 Container(
                   width: double.infinity,
                   height: 150,
-                  margin: EdgeInsets.only(top: 10),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.only(top: 10),
+                  decoration: const BoxDecoration(
                       color: Color(0xf0003333),
                       shape: BoxShape.circle,
                       image: DecorationImage(
@@ -116,12 +98,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 170,),
+                  margin: const EdgeInsets.only(top: 170,),
                     child: Center(
                       child: Text("User Name",style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xf0000000)
+                        color: const Color(0xf0000000)
                       ),),
                     )
                 )
@@ -130,9 +112,9 @@ class _HomePageState extends State<HomePage> {
 
             GestureDetector(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=> materialApp(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(Icons.home),
                 title: Text("Home"),
               ),
@@ -140,43 +122,44 @@ class _HomePageState extends State<HomePage> {
 
             GestureDetector(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=> fetchData(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> profileScreen(),));
               },
-              child: ListTile(
-                leading: Icon(Icons.account_circle),
+              child: const ListTile(
+                leading: Icon(Icons.person_2_outlined),
                 title: Text("Profile"),
               ),
             ),
 
             GestureDetector(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=> Register(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Feedbackscreen(),));
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(Icons.shopping_cart),
-                title: Text("Shopping Cart"),
+                title: Text("FeedBack"),
               ),
             ),
 
             GestureDetector(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=> Login(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> checkoutScreen(),));
               },
-              child: ListTile(
-                leading: Icon(Icons.favorite_border),
-                title: Text("Favourites"),
+              child: const ListTile(
+                leading: Icon(Icons.check),
+                title: Text("Checkout"),
               ),
             ),
 
             GestureDetector(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=> Login(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen(),));
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(Icons.logout),
                 title: Text("Logout"),
               ),
             ),
+
 
           ],
 
@@ -201,11 +184,11 @@ class _HomePageState extends State<HomePage> {
                       .startAt([searchName]).endAt([searchName ]).snapshots(),
                   builder: (context, snapshot) {
                     if (snapshot.hasError) {
-                      return Text('Something went wrong');
+                      return const Text('Something went wrong');
                     }
 
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Text("Loading");
+                      return const Text("Loading");
                     }
                     return ListView.builder(
                         shrinkWrap: true,
@@ -214,13 +197,6 @@ class _HomePageState extends State<HomePage> {
                           var data = snapshot.data!.docs[index];
                           return ListTile(
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //       builder: (context) => ProfileView(
-                              //             userId: data['id'],
-                              //           )),
-                              // );
                             },
                             leading: CircleAvatar(
                               radius: 24,
@@ -237,8 +213,8 @@ class _HomePageState extends State<HomePage> {
 
               Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 20),
-                decoration: BoxDecoration(
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         bottomRight: Radius.circular(40),
                         bottomLeft: Radius.circular(40)
@@ -248,7 +224,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
-                    SizedBox(height: 30,),
+                    const SizedBox(height: 30,),
                     CarouselSlider(
                       items: [
 //First Slider
@@ -261,7 +237,7 @@ class _HomePageState extends State<HomePage> {
                             children:[
 
                               Container(
-                                margin: EdgeInsets.only(left:120,),
+                                margin: const EdgeInsets.only(left:120,),
                                 // padding: EdgeInsets.only(left: 10),
                                 width: 230,
                                 height: double.infinity,
@@ -273,7 +249,7 @@ class _HomePageState extends State<HomePage> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                   Container(
                                     width: 170,
                                     height: 20,
                                     // color: Colors.cyan,
@@ -292,7 +268,7 @@ class _HomePageState extends State<HomePage> {
                                     child: Text('laptop name Laptop Statement', style: GoogleFonts.poppins(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xf0171717),
+                                      color: const Color(0xf0171717),
                                     ),),
                                   ),
 
@@ -301,17 +277,17 @@ class _HomePageState extends State<HomePage> {
 
                                     },
                                     child: Container(
-                                      padding: EdgeInsets.only(left: 18,top: 7),
+                                      padding:const EdgeInsets.only(left: 18,top: 7),
                                       width: 100,
                                       height: 40,
                                       decoration: BoxDecoration(
-                                          color: Color(0xf0003333),
+                                          color:const Color(0xf0003333),
                                           borderRadius: BorderRadius.circular( 20)
                                       ),
                                       child: Text("Buy Now",style: GoogleFonts.poppins(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w400,
-                                        color: Color(0xf0ffffff),
+                                        color: const Color(0xf0ffffff),
                                       ),),
                                     ),
                                   )
@@ -322,8 +298,6 @@ class _HomePageState extends State<HomePage> {
                         ),
 //second slider
                         Container(
-                          // margin: EdgeInsets.symmetric(horizontal: 20),
-                          // color: Colors.orange,
                           height: double.infinity,
                           child:
 
@@ -331,7 +305,7 @@ class _HomePageState extends State<HomePage> {
                             children:[
 
                               Container(
-                                margin: EdgeInsets.only(left:120,),
+                                margin: const EdgeInsets.only(left:120,),
                                 // padding: EdgeInsets.only(left: 10),
                                 width: 230,
                                 height: double.infinity,
@@ -351,7 +325,7 @@ class _HomePageState extends State<HomePage> {
                                     child: Text('Lenovo Yoga', style: GoogleFonts.poppins(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
-                                      color: Color(0xf0a9a9a9),
+                                      color: const Color(0xf0a9a9a9),
                                     ),),
                                   ),
                                   Container(
@@ -362,7 +336,7 @@ class _HomePageState extends State<HomePage> {
                                     child: Text('laptop name Laptop Statement', style: GoogleFonts.poppins(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xf0171717),
+                                      color: const Color(0xf0171717),
                                     ),),
                                   ),
 
@@ -371,17 +345,17 @@ class _HomePageState extends State<HomePage> {
 
                                     },
                                     child: Container(
-                                      padding: EdgeInsets.only(left: 18,top: 7),
+                                      padding: const EdgeInsets.only(left: 18,top: 7),
                                       width: 100,
                                       height: 40,
                                       decoration: BoxDecoration(
-                                          color: Color(0xf0003333),
+                                          color: const Color(0xf0003333),
                                           borderRadius: BorderRadius.circular( 20)
                                       ),
                                       child: Text("Buy Now",style: GoogleFonts.poppins(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w400,
-                                        color: Color(0xf0ffffff),
+                                        color:const Color(0xf0ffffff),
                                       ),),
                                     ),
                                   )
@@ -400,7 +374,7 @@ class _HomePageState extends State<HomePage> {
                             children:[
 
                               Container(
-                                margin: EdgeInsets.only(left:120,),
+                                margin: const EdgeInsets.only(left:120,),
                                 // padding: EdgeInsets.only(left: 10),
                                 width: 230,
                                 height: double.infinity,
@@ -420,7 +394,7 @@ class _HomePageState extends State<HomePage> {
                                     child: Text('Pro Art Studio book', style: GoogleFonts.poppins(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
-                                      color: Color(0xf0a9a9a9),
+                                      color: const Color(0xf0a9a9a9),
                                     ),),
                                   ),
                                   Container(
@@ -431,7 +405,7 @@ class _HomePageState extends State<HomePage> {
                                     child: Text('laptop name Laptop Statement', style: GoogleFonts.poppins(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xf0171717),
+                                      color: const Color(0xf0171717),
                                     ),),
                                   ),
 
@@ -444,13 +418,13 @@ class _HomePageState extends State<HomePage> {
                                       width: 100,
                                       height: 40,
                                       decoration: BoxDecoration(
-                                          color: Color(0xf0003333),
+                                          color: const Color(0xf0003333),
                                           borderRadius: BorderRadius.circular( 20)
                                       ),
                                       child: Text("Buy Now",style: GoogleFonts.poppins(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w400,
-                                        color: Color(0xf0ffffff),
+                                        color: const Color(0xf0ffffff),
                                       ),),
                                     ),
                                   )
@@ -552,11 +526,7 @@ class _HomePageState extends State<HomePage> {
                                       // color: Colors.cyan,
                                       child: Image.asset(_buttons[index]),
                                     )
-                                    // Text(_buttons[index], style: GoogleFonts.poppins(
-                                    //   fontWeight: FontWeight.w500,
-                                    //   color: selectedIndex == index ? Color(0xffffffff) :
-                                    //   Color(0xf0000000),
-                                    // ),)
+
                               ),
                             ),
                           );
@@ -756,41 +726,6 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-
-
-
-                    // Row(
-                    //   children:[
-                    //     SizedBox(width: 20,),
-                    //     Text("Discover Our",style: GoogleFonts.workSans(
-                    //     fontSize: 27,
-                    //     fontWeight: FontWeight.w500,
-                    //     color: Color(0xf0000000),
-                    //   ),),
-                    //     SizedBox(width: 140,),
-                    //     Container(
-                    //       width: 51,
-                    //       height: 53,
-                    //       decoration: BoxDecoration(
-                    //         color: Color(0xffff6d40),
-                    //         borderRadius: BorderRadius.circular(23)
-                    //       ),
-                    //         child: Icon(Icons.search,color: Color(0xffffffff))
-                    //     ),
-                    //
-                    //   ],),
-
-                    // Container(
-                    //   margin: EdgeInsets.symmetric(horizontal: 20),
-                    //   child: Text("Products",style: GoogleFonts.workSans(
-                    //     fontSize: 27,
-                    //     fontWeight: FontWeight.w700,
-                    //     color: Color(0xf0000000),
-                    //   ),),
-                    // ),
-
-
-
                   ],
                 ),
               ),

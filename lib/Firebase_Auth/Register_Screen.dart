@@ -90,7 +90,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 Container(
                   decoration: const BoxDecoration(
-                      color: Color.fromRGBO(6, 27, 28,1),
+                      color: Color(0xf0003333),
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(20) , topRight: Radius.circular(20)) ),
                   width: double.infinity,
                   height: 800,
@@ -158,7 +158,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           Container(
                                             padding: const EdgeInsets.all(8.0),
                                             decoration: const BoxDecoration(
-                                                border:  Border(bottom: BorderSide(color: Color.fromRGBO(6, 27, 28,1)))
+                                                border:  Border(bottom: BorderSide(color: Color(0xf0003333)))
                                             ),
                                             child: TextFormField(
                                               controller: firstname,
@@ -171,14 +171,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                 border: InputBorder.none,
                                                 hintText: "Enter Name",
                                                 hintStyle: TextStyle(color: Colors.grey[700]),
-                                                prefixIcon: const Icon(Icons.person,color: Color.fromRGBO(6, 27, 28,1),),
+                                                prefixIcon: const Icon(Icons.person,color: Color(0xf0003333),),
                                               ),
                                             ),
                                           ),
                                           Container(
                                             padding: const EdgeInsets.all(8.0),
                                             decoration: const BoxDecoration(
-                                                border:  Border(bottom: BorderSide(color: Color.fromRGBO(6, 27, 28,1)))
+                                                border:  Border(bottom: BorderSide(color: Color(0xf0003333)))
                                             ),
                                             child: TextFormField(
                                               controller: lastname,
@@ -191,14 +191,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                 border: InputBorder.none,
                                                 hintText: "Enter Last Name",
                                                 hintStyle: TextStyle(color: Colors.grey[700]),
-                                                prefixIcon: const Icon(Icons.person_2_outlined,color: Color.fromRGBO(6, 27, 28,1),),
+                                                prefixIcon: const Icon(Icons.person_2_outlined,color: Color(0xf0003333),),
                                               ),
                                             ),
                                           ),
                                           Container(
                                             padding: const EdgeInsets.all(8.0),
                                             decoration: const BoxDecoration(
-                                                border:  Border(bottom: BorderSide(color: Color.fromRGBO(6, 27, 28,1)))
+                                                border:  Border(bottom: BorderSide(color: Color(0xf0003333)))
                                             ),
                                             child: TextFormField(
                                               controller: email,
@@ -211,14 +211,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                 border: InputBorder.none,
                                                 hintText: "Enter Email",
                                                 hintStyle: TextStyle(color: Colors.grey[700]),
-                                                prefixIcon: const Icon(Icons.email,color: Color.fromRGBO(6, 27, 28,1),),
+                                                prefixIcon: const Icon(Icons.email,color: Color(0xf0003333),),
                                               ),
                                             ),
                                           ),
                                           Container(
                                             padding: const EdgeInsets.all(8.0),
                                             decoration: const BoxDecoration(
-                                                border:  Border(bottom: BorderSide(color: Color.fromRGBO(6, 27, 28,1)))
+                                                border:  Border(bottom: BorderSide(color: Color(0xf0003333)))
                                             ),
                                             child: TextFormField(
                                               controller: contact,
@@ -231,7 +231,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                 border: InputBorder.none,
                                                 hintText: "Enter Contact Number",
                                                 hintStyle: TextStyle(color: Colors.grey[700]),
-                                                prefixIcon: const Icon(Icons.contact_page_outlined,color: Color.fromRGBO(6, 27, 28,1),),
+                                                prefixIcon: const Icon(Icons.contact_page_outlined,color: Color(0xf0003333),),
                                               ),
                                             ),
                                           ),
@@ -256,7 +256,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                   });
                                                 }, icon: passHide==true? Icon(Icons.remove_red_eye):Icon(Icons.key)),
                                                 hintStyle: TextStyle(color: Colors.grey[700]),
-                                                prefixIcon: const Icon(Icons.password,color: Color.fromRGBO(6, 27, 28,1),),
+                                                prefixIcon: const Icon(Icons.password,color: Color(0xf0003333),),
                                               ),
                                             ),
                                           ),
@@ -292,7 +292,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           gradient: const LinearGradient(
                                               colors: [
                                                 Colors.black,
-                                                Color.fromRGBO(6, 27, 28,1),
+                                                Color(0xf0003333),
                                                 Colors.black
                                               ]
                                           )
